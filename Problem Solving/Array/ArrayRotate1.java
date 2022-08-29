@@ -1,6 +1,12 @@
-// How to rotate Array by d elements;
+/*
+ * How to rotate Array by d elements;
+ * Input -> 1 2 3 4 5 6 7 8
+ * Output -> 7 8 1 2 3 4 5 6 (Right rotate)
+ * Output -> 3 4 5 6 7 8 1 2 (Left rotate)
+ */
 
-import java.util.*;
+// package
+import java.util.Scanner;
 
 class ArrayRotate1{
 	static void reverse(int[] arr, int start, int end){
