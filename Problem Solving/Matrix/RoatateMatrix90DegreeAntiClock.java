@@ -1,3 +1,19 @@
+// Rotate matrix by 90 degree anti clockwise
+/*
+* Input
+* 3 3
+* 1 2 3
+* 4 5 6
+* 7 8 9
+*
+*
+* output
+* 3 6 9 
+* 2 5 8 
+* 1 4 7 
+*
+*/
+
 import java.util.Scanner;
 
 class RoatateMatrix90DegreeAntiClock{
@@ -59,3 +75,6 @@ class RoatateMatrix90DegreeAntiClock{
 
 	}
 }
+
+// Time Complexity -> O(n*n)
+// Space Complexity -> O(1)
