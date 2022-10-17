@@ -2,6 +2,17 @@ import java.util.Scanner;
 
 public class LinkedListOperation{
 
+	// delete key in linkedlist
+	public static Node<Integer> delete(Node<Integer> head,int key){
+		Node<Integer> temp =head;
+		while(temp.next.data != key ){
+			temp=temp.next;
+		}
+		temp.next=temp.next.next;
+		return head;
+	}
+
+	// insert a key in linkedlist 
 	public static Node<Integer> insert(Node<Integer> head, int data,int pos){
 		Node<Integer> temp=head;
 		Node<Integer> newNode=new Node<Integer>(data);
@@ -50,6 +61,7 @@ public class LinkedListOperation{
 		Node<Integer> head = takeInput();
 		head = insert(head,15,0);
 		head = insert(head,25,3);
+		head = delete(head,25);
 		print(head);
 	}
 }
