@@ -1,4 +1,4 @@
-// Implement a Singly Linked List and display it
+// Implement a Singly Linked List and perform operations
 
 class SinglyLinkedList{
 	static class LLNode{
@@ -25,6 +25,61 @@ class SinglyLinkedList{
 		}
 	}
 
+	// Deletion
+
+	static void deleteAtStart(){
+		if(head == null){
+			System.out.println("Linked List is Empty");
+			return;
+		}
+		head=head.next;
+	}
+
+	static void deleteAtEnd(){
+		if(head == null){
+			System.out.println("Linked List is Empty");
+			return;
+		}
+
+		if(head == null){
+			head=null;
+			return;
+		}
+
+		LLNode last=head;
+		LLNode secondLast=null;
+
+		while(last.next !=null){
+			secondLast=last;
+			last=last.next;
+		}
+		secondLast.next=null;
+	}
+
+	static void deleteAtPosition(int pos){
+		if(head == null){
+			System.out.println("Linkedlist is Empty");
+		}
+
+		if(pos == 0){
+			head=head.next;
+			return;
+		}
+
+		LLNode temp=head;
+		
+		for(int i=0;temp!=null && i<pos-1;i++){
+			temp=temp.next;
+		}
+
+		if(temp == null || temp.next == null){
+			return;
+		}
+
+		temp.next=temp.next.next;
+	}
+
+	// Insertion
 	static void insertAtStart(int data){
 		LLNode newNode= new LLNode(data);
 		newNode.next=head;
@@ -52,6 +107,8 @@ class SinglyLinkedList{
 		temp.next=newNode;
 	}
 
+	// display
+
 	static void display(){
 		LLNode temp = head;
 		if(head == null){
@@ -73,6 +130,9 @@ class SinglyLinkedList{
 		s.insertAtStart(5);
 		s.insertAtEnd(45);
 		s.insertAtPos(25,2);
+		s.deleteAtStart();
+		s.deleteAtEnd();
+		s.deleteAtPosition(1);
 		s.display();
 
 	}
